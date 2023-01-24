@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moviepedia/screen/inputlogin/InputLogin.dart';
 
 class Start extends StatefulWidget {
   const Start({super.key});
@@ -45,10 +46,10 @@ class _StartState extends State<Start> {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => LoginScreen()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Inputlogin()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     // backgroundColor: HexColor(ColoR.primary),
