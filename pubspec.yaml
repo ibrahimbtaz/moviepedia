@@ -47,6 +47,8 @@ dependencies:
   palette_generator: ^0.3.3+2
   sizer: ^2.0.15
   firebase_core :  ^2.4.1
+  cached_network_image: ^3.2.2
+  flutter_facebook_auth: ^4.4.1
 
 dev_dependencies:
   flutter_test:

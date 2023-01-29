@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moviepedia/profile/mainprofile.dart';
 import 'package:moviepedia/screen/home/Home.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 import 'package:moviepedia/screen/inputlogin/components/MethodLogin.dart';
@@ -17,7 +18,7 @@ class _InputloginState extends State<Inputlogin> {
       stream: Auth().authStateChanges,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const MyHomePage();
+          return MainProfile();
         } else {
           return const MethodLogin();
         }

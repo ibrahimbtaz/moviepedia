@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">moviepedia</string>
-    <string name="facebook_app_id">573931454607265</string>
-    <string name="fb_login_protocol_scheme">fb433571248856822</string>
-    <string name="facebook_client_token">f115bcd1af7ff268f5f356236a927039</string>
+    <string name="app_name">FlutterMovie</string>
+    <string name="facebook_app_id">1207786070170109</string>
+    <string name="fb_login_protocol_scheme">fb1207786070170109</string>
+    <string name="facebook_client_token">7be261a1ada632276e0905ac99c2b69a</string>
 </resources>
