@@ -6,11 +6,11 @@ class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
     Key? key,
     required this.text,
-    // required this.icon,
+    required this.icon,
     this.press,
   }) : super(key: key);
 
-  final String text;
+  final String text, icon;
   final VoidCallback? press;
 
   //membuat Menu profile
@@ -28,12 +28,12 @@ class ProfileMenu extends StatelessWidget {
         onPressed: press,
         child: Row(
           children: [
-            // SvgPicture.asset(
-            //   icon,
-            //   color: quaternary,
-            //   width: 20,
-            //   height: 20,
-            // ),
+            SvgPicture.asset(
+              icon,
+              color: quaternary,
+              width: 20,
+              height: 20,
+            ),
             const SizedBox(width: 20),
             Expanded(
                 child: Text(

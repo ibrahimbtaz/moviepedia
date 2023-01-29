@@ -21,22 +21,22 @@ class Body extends StatelessWidget {
           const SizedBox(height: 10),
           ProfileMenu(
             text: "My Account",
-            // icon: "assets/icons/user-solid.svg",
+            icon: "assets/icons/user-solid.svg",
             press: () => {},
           ),
           ProfileMenu(
             text: "Edit Profile",
-            // icon: "assets/icons/edit-fill-icon.svg",
+            icon: "assets/icons/edit-fill-icon.svg",
             press: () {},
           ),
           ProfileMenu(
             text: "Settings",
-            // icon: "assets/icons/settings-fill-icon.svg",
+            icon: "assets/icons/settings-fill-icon.svg",
             press: () {},
           ),
           ProfileMenu(
             text: "Log Out",
-            // icon: "assets/icons/logout-fill-icon.svg",
+            icon: "assets/icons/logout-fill-icon.svg",
             press: signOut,
           ),
         ],

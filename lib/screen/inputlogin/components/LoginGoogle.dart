@@ -72,10 +72,10 @@ class _LoginGoogleState extends State<LoginGoogle> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
-                  // Image(
-                  //   image: AssetImage("assets/images/icons-google.png"),
-                  //   width: 28,
-                  // ),
+                  Image(
+                    image: AssetImage("assets/images/icons-google.png"),
+                    width: 28,
+                  ),
                   SizedBox(
                     width: 15,
                   ),
