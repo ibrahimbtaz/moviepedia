@@ -32,7 +32,7 @@ class _StartState extends State<Start> {
                   .copyWith(fontSize: 24, overflow: TextOverflow.fade),
             ),
             Text(
-              "Find The Best Recipe",
+              "Find The Best Movie",
               style: Theme.of(context)
                   .textTheme
                   .bodyText1!
@@ -55,7 +55,7 @@ class _StartState extends State<Start> {
                     // backgroundColor: HexColor(ColoR.primary),
                     ),
                 child: Text(
-                  "Start Cook",
+                  "Get Started",
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!

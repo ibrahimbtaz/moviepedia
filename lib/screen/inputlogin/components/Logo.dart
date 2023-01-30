@@ -13,12 +13,12 @@ class _LogoState extends State<Logo> {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       child: const Center(
-          child: Image(
-            width: 260,
-            height: 260,
-            image: AssetImage("assets/images/project - logo.png"),
-            // repeat: ImageRepeat.repeat,
-          ),
+          // child: Image(
+          //   width: 260,
+          //   height: 260,
+          //   image: AssetImage("assets/images/project - logo.png"),
+          //   // repeat: ImageRepeat.repeat,
+          // ),
           ),
     );
   }
