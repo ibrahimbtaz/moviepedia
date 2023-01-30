@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:moviepedia/profile/components/body.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 
-
 class MainProfile extends StatelessWidget {
   final User? user = Auth().currentUser;
 
