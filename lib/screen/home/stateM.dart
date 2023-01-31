@@ -159,13 +159,7 @@ class Home extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  // TotalPage adalah halaman yang dituju
-                  MaterialPageRoute(
-                    builder: (context) => TotalPage(),
-                  ),
-                );
+                showAlertDialog(context);
               },
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 40),
@@ -194,18 +188,20 @@ class Home extends StatelessWidget {
 }
 
 showAlertDialog(BuildContext context) {
-
+  final Controller c = Get.put(Controller());
 
   // set up the button
   Widget okButton = TextButton(
     child: Text("OK"),
-    onPressed: () { },
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
   );
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("My title"),
-    content: Text(c.sumTotal().toString()),
+    title: Text("Total",style: TextStyle(fontSize: 23)),
+    content: Text(c.sumTotal().toString(),textAlign: TextAlign.center, style: TextStyle(fontSize: 20),),
     actions: [
       okButton,
     ],
