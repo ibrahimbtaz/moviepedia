@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:moviepedia/screen/home/stateM.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 import 'package:moviepedia/screen/profile/components/ProfileMenu.dart';
 import 'package:moviepedia/screen/profile/components/userid.dart';
@@ -31,7 +32,9 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "StateM",
             icon: "assets/icons/settings-fill-icon.svg",
-            press: () {},
+            press: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>Home()));
+            },
           ),
           ProfileMenu(
             text: "Notification",

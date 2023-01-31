@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:moviepedia/screen/home/stateM.dart';
 import 'package:moviepedia/screen/start/start.dart';
 
 Future<void> main() async {

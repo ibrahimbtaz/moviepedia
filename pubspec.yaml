@@ -49,6 +49,7 @@ dependencies:
   sizer: ^2.0.15
   firebase_core : ^2.4.1
   cached_network_image: ^3.2.2
+  get:
 
 dev_dependencies:
   flutter_test:
