@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:moviepedia/profile/components/body.dart';
+import 'package:moviepedia/screen/profile/components/body.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 
 class MainProfile extends StatelessWidget {

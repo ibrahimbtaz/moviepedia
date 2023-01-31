@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:moviepedia/profile/mainprofile.dart';
+import 'package:moviepedia/screen/profile/mainprofile.dart';
 import 'package:moviepedia/screen/home/Home.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 import 'package:moviepedia/screen/inputlogin/components/MethodLogin.dart';

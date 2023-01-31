@@ -1,10 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:moviepedia/profile/components/ProfileMenu.dart';
-import 'package:moviepedia/profile/components/userid.dart';
+import 'package:moviepedia/screen/crud/crud.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
+import 'package:moviepedia/screen/profile/components/ProfileMenu.dart';
+import 'package:moviepedia/screen/profile/components/userid.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+  const Body({super.key});
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   final User? user = Auth().currentUser;
 
   @override
@@ -26,7 +34,10 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "Crud",
             icon: "assets/icons/cheese-solid.svg",
-            press: () => {},
+            press: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Crud()))
+            },
           ),
           ProfileMenu(
             text: "StateM",
