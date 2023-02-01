@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FlutterMovie</string>
+    <string name="facebook_app_id">1207786070170109</string>
+    <string name="fb_login_protocol_scheme">fb1207786070170109</string>
+    <string name="facebook_client_token">7be261a1ada632276e0905ac99c2b69a</string>
+</resources>
