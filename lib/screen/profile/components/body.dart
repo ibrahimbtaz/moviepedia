@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:moviepedia/screen/chat/homepage.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 import 'package:moviepedia/screen/profile/components/ProfileMenu.dart';
 import 'package:moviepedia/screen/profile/components/userid.dart';
@@ -33,15 +34,20 @@ class Body extends StatelessWidget {
             icon: "assets/icons/settings-fill-icon.svg",
             press: () {},
           ),
-          ProfileMenu(
-            text: "Notification",
-            icon: "assets/icons/bell-solid.svg",
-            press: () {},
-          ),
+          // ProfileMenu(
+          //   text: "Notification",
+          //   icon: "assets/icons/bell-solid.svg",
+          //   press: () {},
+          // ),
           ProfileMenu(
             text: "Chat",
             icon: "assets/icons/chart-bar-regular.svg",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const homechat()),
+              );
+            }
           ),
           // ProfileMenu(
           //   text: "Logout",
@@ -54,6 +60,6 @@ class Body extends StatelessWidget {
   }
 
   Future<void> signOut() async {
-    await Auth().signOut();
+    FirebaseAuth.instance.signOut();
   }
 }

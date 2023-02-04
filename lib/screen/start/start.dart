@@ -22,15 +22,9 @@ class _StartState extends State<Start> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 600,
+              height: 400,
             ),
-            Text(
-              "Let's Cook",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .copyWith(fontSize: 24, overflow: TextOverflow.fade),
-            ),
+
             Text(
               "Find The Best Movie",
               style: Theme.of(context)

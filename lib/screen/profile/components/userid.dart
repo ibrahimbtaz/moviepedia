@@ -44,7 +44,7 @@ class Userid extends StatelessWidget {
             height: 5,
           ),
           Text(
-            FirebaseAuth.instance.currentUser!.email ?? "surya@gmail.com",
+            FirebaseAuth.instance.currentUser!.email ?? "yasinmuhammadyusuf@gmail.com",
             style: const TextStyle(fontSize: 20, color: Colors.black),
           ),
         ],
