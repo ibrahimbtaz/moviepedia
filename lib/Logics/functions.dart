@@ -6,7 +6,7 @@ class Functions {
     final _firestore = FirebaseFirestore.instance;
     final _auth = FirebaseAuth.instance;
     final data = {
-      'img'
+
       'name': _auth.currentUser!.displayName ?? _auth.currentUser!.email,
       'date_time': DateTime.now(),
       'email': _auth.currentUser!.email,

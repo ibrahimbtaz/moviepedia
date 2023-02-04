@@ -11,7 +11,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('StateM'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(

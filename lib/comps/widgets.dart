@@ -1,10 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:moviepedia/screen/inputlogin/InputLogin.dart';
-import 'package:moviepedia/screen/inputlogin/components/MethodLogin.dart';
-import 'package:moviepedia/screen/profile/components/body.dart';
-import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
+import 'package:moviepedia/Logics/functions.dart';
+import 'package:flutter/material.dart';
 import 'package:moviepedia/comps/animated-dialog.dart';
 import 'package:moviepedia/comps/styles.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
@@ -95,14 +93,21 @@ class ChatWidgets {
             ),
           ),
           if (check)
-            const CircleAvatar(
-              child: Icon(
-                Icons.person,
-                size: 13,
-                color: Colors.white,
+             CachedNetworkImage(
+              imageUrl: FirebaseAuth.instance.currentUser!.photoURL ??
+                  "https://cdn-icons-png.flaticon.com/512/1946/1946429.png",
+              imageBuilder: (context, imageProvider) => CircleAvatar(
+                backgroundColor: whiteColor,
+                backgroundImage: imageProvider,
+                radius: 13,
               ),
-              backgroundColor: Colors.grey,
-              radius: 10,
+              placeholder: ((context, url) => const SizedBox(
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: secondary,
+                  ),
+                ),
+              )),
             ),
           if (!check) const Spacer(),
         ],
@@ -162,13 +167,15 @@ class ChatWidgets {
                 //     Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
                 //   },
                 // ),
-                ListTile(
-                  leading: const Icon(Icons.logout),
-                  title: const Text('Logout'),
-                  onTap: ()async{
-                    // await Auth().signOut();
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MainProfile()));
-                  },
+                // ListTile(
+                //   leading: const Icon(Icons.logout),
+                //   title: const Text('Logout'),
+                //   onTap: () {
+                //     // await Auth().signOut();
+                //     Navigator.push(context, MaterialPageRoute(builder: (context)=>MainProfile()));
+                //     //Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+                //     // builder: (context) => MainProfile()), (Route route) => false);
+                //   },
                   // onTap: () async {
                   //   await Auth().signOut();
                   //   Navigator.push(
@@ -177,7 +184,7 @@ class ChatWidgets {
                   //   );
                   // },
 
-                ),
+                // ),
                 // ListTile(
                 //   leading: const Icon(Icons.arrow_back_ios),
                 //   title: const Text('Back'),

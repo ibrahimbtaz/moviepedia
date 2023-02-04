@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutterfire_ui/auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -88,7 +89,6 @@ class _AnimatedDialogState extends State<AnimatedDialog> {
                                               return  ChatPage(
                                                 id: data[i].id.toString(),
                                                 name: data[i]['name'],
-
                                               );
                                             },
                                           ),
