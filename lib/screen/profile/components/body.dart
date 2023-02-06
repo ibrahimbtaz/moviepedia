@@ -33,11 +33,11 @@ class Body extends StatelessWidget {
             icon: "assets/icons/settings-fill-icon.svg",
             press: () {},
           ),
-          ProfileMenu(
-            text: "Notification",
-            icon: "assets/icons/bell-solid.svg",
-            press: () {},
-          ),
+          // ProfileMenu(
+          //   text: "Notification",
+          //   icon: "assets/icons/bell-solid.svg",
+          //   press: () {},
+          // ),
           ProfileMenu(
             text: "Chat",
             icon: "assets/icons/chart-bar-regular.svg",
