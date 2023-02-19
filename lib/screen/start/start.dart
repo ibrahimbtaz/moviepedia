@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moviepedia/Logics/getfcm.dart';
 import 'package:moviepedia/screen/inputlogin/InputLogin.dart';
 
 class Start extends StatefulWidget {
@@ -9,6 +10,11 @@ class Start extends StatefulWidget {
 }
 
 class _StartState extends State<Start> {
+
+    void _notif() async {
+    String? fcmKey = await getFcmToken();
+    print('FCM Key : $fcmKey');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +46,11 @@ class _StartState extends State<Start> {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Inputlogin()),
-                  );
+                  _notif();
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const Inputlogin()),
+                  // );
                 },
                 style: ElevatedButton.styleFrom(
                     // backgroundColor: HexColor(ColoR.primary),
