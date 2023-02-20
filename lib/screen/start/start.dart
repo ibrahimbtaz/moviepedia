@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:moviepedia/Logics/getfcm.dart';
+import 'package:moviepedia/Logics/noti.dart';
 import 'package:moviepedia/screen/inputlogin/InputLogin.dart';
 
 class Start extends StatefulWidget {
@@ -9,6 +12,14 @@ class Start extends StatefulWidget {
 }
 
 class _StartState extends State<Start> {
+
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+FlutterLocalNotificationsPlugin();
+
+    void _notif() async {
+    String? fcmKey = await getFcmToken();
+    print('FCM Key : $fcmKey');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +51,8 @@ class _StartState extends State<Start> {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
+                  _notif();
+                  Noti.showBigTextNotification(title: "New message moviepedia", body: "Your Welcome", fln: flutterLocalNotificationsPlugin);
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const Inputlogin()),
