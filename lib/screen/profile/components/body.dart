@@ -7,7 +7,7 @@ import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 import 'package:moviepedia/screen/profile/components/ProfileMenu.dart';
 import 'package:moviepedia/screen/profile/components/userid.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatelessWidget{
   final User? user = Auth().currentUser;
 
   @override
@@ -15,6 +15,8 @@ class Body extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
             height: 10,

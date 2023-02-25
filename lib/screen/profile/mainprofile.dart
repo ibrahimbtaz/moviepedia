@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:moviepedia/screen/inputlogin/auth/auth.dart';
 import 'package:moviepedia/screen/profile/components/body.dart';
+import 'package:moviepedia/screen/profile/components/bodyL.dart';
 
 class MainProfile extends StatelessWidget {
   final User? user = Auth().currentUser;
@@ -14,11 +15,9 @@ class MainProfile extends StatelessWidget {
       body: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Body()],
-        ),
+        child: OrientationBuilder(
+            builder: (context, orientation) =>
+            orientation == Orientation.portrait ? Body() : BodyL()),
       ),
     );
   }
