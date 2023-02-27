@@ -6,7 +6,6 @@ import 'package:moviepedia/screen/inputlogin/components/LoginGoogle.dart';
 import 'package:moviepedia/screen/inputlogin/components/Logo.dart';
 import 'package:moviepedia/utils/constant.dart';
 
-
 class MethodLogin extends StatefulWidget {
   const MethodLogin({Key? key}) : super(key: key);
 
@@ -102,6 +101,7 @@ class _MethodLoginState extends State<MethodLogin> {
   ) {
     return Container(
       alignment: Alignment.center,
+
       margin: const EdgeInsets.only(top: 10),
       padding: const EdgeInsets.only(left: 20, right: 20),
       height: 56,
@@ -199,7 +199,6 @@ class _MethodLoginState extends State<MethodLogin> {
 
   Widget _loginOrRegisterButton() {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -228,7 +227,6 @@ class _MethodLoginState extends State<MethodLogin> {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(20),
           child: isLogin ? Login() : Register(),
         ),
       ),
@@ -236,39 +234,189 @@ class _MethodLoginState extends State<MethodLogin> {
   }
 
   Widget Login() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Logo(),
-          _entryFieldEmail('email', _controllerEmail),
-          _entryFieldPassword('password', _controllerPassword),
-          _submitButton(),
-          const LoginGoogle(),
-          const LoginFacebook(),
-          _loginOrRegisterButton(),
-        ],
-      ),
+//tinggi laya hp dari atas smpai bawah
+    final allheight = MediaQuery.of(context).size.height;
+    //lebar layar hp
+    final allwidth = MediaQuery.of(context).size.width;
+
+    final myAppbar = AppBar(
+      title: Text("latihan media query"),
+    );
+
+    //tinggi body
+    final bodyheight = allheight -
+        myAppbar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+    final bodywidth = allwidth;
+    //mengubah tampilan sesuai orientasi hp
+    //memeriksa orientasi hp
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
+    return Center(
+      child: (isLandscape)
+          ?
+          //lanscape
+          Row(
+              children: [
+                Container(
+                  width: bodywidth * 0.5,
+                  height: allheight,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/gambar.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Container(
+                  height: allheight,
+                  width: bodywidth * 0.5,
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: SingleChildScrollView(
+                    child: Column(
+
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: bodyheight * 0.1,
+                        ),
+                        const Logo(),
+                        _entryFieldEmail('email', _controllerEmail),
+                        _entryFieldPassword('password', _controllerPassword),
+                        _submitButton(),
+                        const LoginGoogle(),
+                        const LoginFacebook(),
+                        _loginOrRegisterButton(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )
+          :
+          //potrait
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  SizedBox(
+                    height: bodyheight * 0.1,
+                  ),
+                  const Logo(),
+                  _entryFieldEmail('email', _controllerEmail),
+                  _entryFieldPassword('password', _controllerPassword),
+                  _submitButton(),
+                  const LoginGoogle(),
+                  const LoginFacebook(),
+                  _loginOrRegisterButton(),
+                ],
+              ),
+          ),
     );
   }
 
   Widget Register() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+    //tinggi laya hp dari atas smpai bawah
+    final allheight = MediaQuery.of(context).size.height;
+    //lebar layar hp
+    final allwidth = MediaQuery.of(context).size.width;
+
+    final myAppbar = AppBar(
+      title: Text("latihan media query"),
+    );
+
+    //tinggi body
+    final bodyheight = allheight -
+        myAppbar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+    final bodywidth = allwidth;
+    //mengubah tampilan sesuai orientasi hp
+    //memeriksa orientasi hp
+    final bool isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
+    return Center(
+      child: (isLandscape)
+          ?
+      //lanscape
+      Row(
         children: [
-          const Logo(),
-          _entryFieldUsername('username', _controllerUsername),
-          _entryFieldEmail('email', _controllerEmail),
-          _entryFieldPassword('password', _controllerPassword),
-          _submitButton(),
-          _loginOrRegisterButton(),
+          Container(
+            width: bodywidth * 0.5,
+            height: allheight,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/gambar.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Container(
+            height: allheight,
+            width: bodywidth * 0.5,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: SingleChildScrollView(
+              child: Column(
+
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: bodyheight * 0.1,
+                  ),
+                  const Logo(),
+                  _entryFieldUsername('username', _controllerUsername),
+                  _entryFieldEmail('email', _controllerEmail),
+                  _entryFieldPassword('password', _controllerPassword),
+                  _submitButton(),
+                  _loginOrRegisterButton(),
+                ],
+              ),
+            ),
+          ),
         ],
+      )
+          :
+      //potrait
+      Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+            SizedBox(
+              height: bodyheight * 0.1,
+            ),
+            const Logo(),
+                  _entryFieldUsername('username', _controllerUsername),
+                  _entryFieldEmail('email', _controllerEmail),
+                  _entryFieldPassword('password', _controllerPassword),
+                  _submitButton(),
+                  _loginOrRegisterButton(),
+          ],
+        ),
       ),
     );
+    // return Padding(
+    //   padding: const EdgeInsets.only(top: 20),
+    //   child: Column(
+    //     crossAxisAlignment: CrossAxisAlignment.center,
+    //     mainAxisAlignment: MainAxisAlignment.center,
+    //     children: [
+    //       const Logo(),
+    //       _entryFieldUsername('username', _controllerUsername),
+    //       _entryFieldEmail('email', _controllerEmail),
+    //       _entryFieldPassword('password', _controllerPassword),
+    //       _submitButton(),
+    //       _loginOrRegisterButton(),
+    //     ],
+    //   ),
+    // );
   }
 }
